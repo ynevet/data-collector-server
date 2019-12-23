@@ -2,22 +2,23 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <title>Data Collector Service</title>
+  <meta name="description" content="Data Collector Service">
+  <meta name="author" content="Yair Nevet">
 
 </head>
 
 <body>
-    Data Collector:
-    <form action="action.php" method="post">
+   <h3>Enter your details:</h3> 
+    <form id="details-form">
         <label for="first-name">First Name:</label>
-        <input type="text" name="first-name" id="first-name" value="http://localhost:3000/session_endpoint?name=john&age=34">
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <input type="text" name="first-name" id="first-name" required>
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="age" required><br/><br/>
+        <input type="submit" value="Submit" style="height:200px;width:200px">
+        <input type="reset" value="Reset" style="height:200px;width:200px">
     </form>
-  <script src="js/scripts.js"></script>
+    <span id="message"></span>
+  <script src="scripts.js"></script>
 </body>
 </html>

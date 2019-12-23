@@ -2,21 +2,23 @@ const express = require('express');
 const app = express();
 const uuid = require('uuid');
 const cookieParser = require('cookie-parser');
-const path = require('path');
-const public = path.join(__dirname, 'public');
+express-session
 const redis = require("redis");
-const redisClient = redis.createClient();
+const redisClient = redis.createClient({
+    host: 'redis-server',
+    port: 6379
+});
 
 
 redisClient.on("error", function (err) {
     console.log("Redis Error: " + err);
 });
 
+app.use(express.static('public'))
 app.use(cookieParser());
 
-app.use('/', express.static(public));
-
 app.get('/collect', function (req, res) {
+    console.log(req);
     if(!req.cookies.sessionID){
         let sessionId = uuid.v1();
         res.cookie('sessionID', sessionId);
@@ -38,5 +40,9 @@ app.get('/collect', function (req, res) {
 
     res.send();
   })
+
+  app.get('/current_session', function (req, res) {
+      res.json("session data");
+  })
  
-app.listen(3000)
+app.listen(8081)
