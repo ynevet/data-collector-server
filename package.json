@@ -4,6 +4,7 @@
   "description": "Stateless NodeJS web-server implementation for scalable session management",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+    "redis": "^2.8.0",
     "uuid": "^3.3.3"
   }
 }
