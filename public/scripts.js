@@ -8,13 +8,14 @@ window.addEventListener("load", function () {
             if (XHR.readyState === 4) {
                 if (XHR.status === 200) {
                     showMessage('Data sent!');
+                    document.getElementById("user-state").innerHTML = XHR.responseText;
                 } else {
                     showMessage('Oops! Something went wrong, error: ' + XHR.statusText);
                 }
             }
         };
-
-        XHR.open("GET", "/collect" + '?' + QUERY_PARAMS);
+        
+        XHR.open("GET", `/collect?${QUERY_PARAMS}`);
         XHR.send();
     }
 

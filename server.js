@@ -22,3 +22,4 @@ app.get('/collect', handleSessionStateAsync(redisClient), function (req, res) {
   })
  
 app.listen(8081)
+console.log('Go to:',`http://localhost:4001/`);
