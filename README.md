@@ -7,10 +7,10 @@ Prerequisite:
 Make sure to have Docker installed on your machine
 
 Steps:
-1. Clone this repo
-2. CD into data-collector-server directory
-3. Run the following command: docker-compose up or docker-compose up --build --scale node-app=5 (to scale out with 5 instances)
-4. If no errors reported, keep to the next step (otherwise, please contact me)
+1. git clone https://github.com/ynevet/data-collector-server.git
+2. cd data-collector-server
+3. Run: docker-compose up OR docker-compose up --build --scale node-app=5 (to scale out with 5 instances)
+4. If no errors reported, keep to the next step (otherwise, investigate or file an issue)
 5. Browse to: http://localhost:4000/
-6. Send some data and analyze the network traffic to the /collect route (cookie should be dropped in the browser for sessionID)
-7. In addition, your session data should be displayed on the page after submitting the data
+6. Submit some data and analyze the network traffic to the /collect route (cookie should be dropped in the browser for sessionID)
+7. In addition, your session state should be displayed on the page after submitting the data
