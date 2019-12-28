@@ -18,8 +18,8 @@ redisClient.on("error", function (err) {
 app.use(express.static('public'))
 app.use(cookieParser());
 app.get('/collect', handleSessionStateAsync(redisClient), function (req, res) {
+    console.log(process.pid)
     res.send(res.userSession);
   })
  
-app.listen(8081)
-console.log('Go to:',`http://localhost:4001/`);
+app.listen(5000)
